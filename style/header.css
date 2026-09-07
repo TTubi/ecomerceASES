@@ -32,6 +32,7 @@
 }
 
 /*NAV DE LINKS Y BOTONES*/
+
 .nav-flex {
     display: flex;
     align-items: center;
@@ -43,8 +44,8 @@
     justify-content: center;
     display: flex;
     align-items: center;
-    gap: 15px;
-
+    gap: 20px;
+    
 }
 
 .div-boton-enc {
@@ -56,6 +57,9 @@
 .hipervinc {
     color: var(--color-fondo);
     text-decoration: none;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
 }
 /*BOTONES*/
 .btn-enc {
@@ -82,7 +86,7 @@
     }
 
     .buscador-container {
-        width: 100%;             /* En móvil ocupa todo el ancho */
+        width: 100%;             /* En Celular ocupa todo el ancho */
         max-width: 100%;
     }
 

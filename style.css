@@ -19,6 +19,7 @@ body {
 main {
     min-height: 100vh;
     display: flex;
+    background-color: black;
 }
 
 .pre-final{
