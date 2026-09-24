@@ -1,4 +1,251 @@
-.texto.Destacados {
+/* SECCION INICIO */
+
+.inicio{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.inicio-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.inicio-texto h1{
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--color-texto);
+}
+
+.inicio-texto p{
+    font-size: 1.05rem;
+    color: var(--color-texto-suave);
+    max-width: 420px;
+}
+
+.inicio-texto a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 30px;
+    margin-top: 8px;
+    background-color: var(--color-primario);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--radius);
+    transition: background-color var(--transicion), transform var(--transicion);
+}
+
+.inicio-texto a:hover{
+    background-color: rgb(85, 1, 1);
+    transform: translateY(-2px);
+}
+
+.inicio-coleccion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio-coleccion img{
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    background-color: var(--color-borde);
+}
+
+/* SECCION ACERCA DE */
+
+.acercaDe{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.acercaDe-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acercaDe-img img{
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    background-color: var(--color-borde);
+}
+
+.acercaDe-texto{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.acercaDe-texto h3{
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+.acercaDe-texto p{
+    color: var(--color-texto-suave);
+    max-width: 480px;
+}
+
+/* SECCION CATEGORIAS */
+
+.categorias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.categorias h2{
+    font-size: 2rem;
+    font-weight: 700;
     text-align: center;
-    
+    color: var(--color-texto);
+}
+
+.categorias-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.categoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radius);
+    transition: box-shadow var(--transicion), transform var(--transicion);
+}
+
+.categoria:hover{
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.categoria h3{
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.categoria a{
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.categoria a:hover{
+    text-decoration:underline ;
+}
+
+/*Celular*/
+@media (max-width: 479px){
+    .inicio, .acercaDe{
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 40px 24px;
+        text-align: center;
+    }
+
+    .inicio-texto{
+        align-items: center;
+    }
+
+    .inicio-texto h1{
+        font-size: 2rem;
+    }
+
+    .categorias{
+        padding: 40px 24px;
+    }
+
+    .categorias-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Tablet*/
+@media (min-width: 480px) and (max-width: 1024px){
+    .inicio, .acercaDe{
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 60px 40px;
+        text-align: center;
+    }
+
+    .inicio-texto{
+        align-items: center;
+    }
+
+    .categorias{
+        padding: 50px 40px;
+    }
+
+    .categorias-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*Celular*/
+@media (max-width: 479px){
+    .inicio{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .acercaDe{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .categoria-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Tablet*/
+@media (min-width: 480px) and (max-width: 1024px){
+    .inicio{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .acercaDe{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .categoria-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

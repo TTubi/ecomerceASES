@@ -1,50 +1,82 @@
 :root {
     --color-fondo: white;
-    --color-primario: rgb(98, 30, 248)
+    --color-primario: rgb(202, 20, 20);
+    --color-secundario: rgb(131, 2, 2);
+    --color-texto: #1a1a1a;
+    --color-texto-suave: #6b6b6b;
+    --color-borde: #e6e6e6;
+    --radius: 10px;
+    --transicion: 0.25s ease;
 }
 
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 /*GENERAL*/
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
-    background-color: white;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
 }
 
 main {
-    min-height: 100vh;
-    display: flex;
-    background-color: black;
+    width: 100%;
 }
 
+/*NEWSLETTER*/
+
 .pre-final{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: red;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--color-secundario);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
-    gap: 10px;
-    
+    padding: 25px 15px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
+
 .pre-final button{
-    padding: 15px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: white;
+    color: var(--color-secundario);
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity var(--transicion);
+}
+
+.pre-final button:hover{
+    opacity: 0.85;
 }
 
 .pre-final input {
-    padding: 7px;
-    width: 250px;
+    padding: 10px 14px;
+    width: 280px;
+    border: none;
+    border-radius: var(--radius);
 }
 
 .pre-final-texto {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight: 500;
 }
 
 .final {
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+}
+
+.final p{
+    color: black;
+    font-size: 0.85rem;
 }
