@@ -2,7 +2,7 @@
 
 ## Descripción del proyecto
 
-ecomerceASES es una página web de una librería online. El proyecto permite visualizar diferentes productos, buscar libros y filtrarlos por categoría.
+ecomerceASES es una página web de una tienda de ropa online. El proyecto permite visualizar diferentes productos, buscar prendas de ropa y filtrarlos por categoría.
 
 Además, cuenta con un carrito de compras donde se pueden agregar productos, modificar sus cantidades y eliminarlos.
 
