@@ -1,0 +1,103 @@
+.cuenta-hero {
+    text-align: center;
+    padding: 40px 20px 10px;
+}
+
+.cuenta-hero h1 {
+    font-size: 2.2rem;
+    color: var(--color-texto);
+}
+
+.cuenta-hero p {
+    color: var(--color-texto-suave);
+    margin-top: 8px;
+}
+
+.cuenta-tabs {
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 80px;
+}
+
+.cuenta-caja {
+    width: 100%;
+    max-width: 420px;
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+
+.cuenta-tab-botones {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    background-color: white;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+.tab-btn.tab-activo {
+    background-color: var(--color-primario);
+    color: white;
+    border-color: var(--color-primario);
+}
+
+.cuenta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cuenta-form .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cuenta-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.cuenta-form input {
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radius);
+    font-family: inherit;
+}
+
+.cuenta-form input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(131, 2, 2, 0.1);
+}
+
+.cuenta-form .btn-enviar {
+    padding: 12px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--color-primario);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color var(--transicion);
+}
+
+.cuenta-form .btn-enviar:hover {
+    background-color: var(--color-secundario);
+}
+
+@media (max-width: 479px) {
+    .cuenta-caja {
+        padding: 18px;
+    }
+}
