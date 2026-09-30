@@ -1,12 +1,12 @@
 const productos = [
-    { id: 1, nombre: "Remera Jordan Mural", categoria: "remeras", precio: 120000, talle: "M", disponible: false },
-    { id: 2, nombre: "Remera Jordan 85", categoria: "remeras", precio: 120000, talle: "L", disponible: false },
-    { id: 3, nombre: "Buzo Nike F.R.O.G", categoria: "buzos", precio: 130000, talle: "XL (oversize)", disponible: false },
-    { id: 4, nombre: "Remera Jordan Sport", categoria: "remeras", precio: 115000, talle: "L", disponible: false },
-    { id: 5, nombre: "Pantalón Cargo Nike Tech", categoria: "pantalones", precio: 95000, talle: "M", disponible: true, destacado: true },
-    { id: 6, nombre: "Gorra Jordan Jumpman", categoria: "accesorios", precio: 45000, talle: "Único", disponible: true, destacado: true },
-    { id: 7, nombre: "Buzo Adidas Originals", categoria: "buzos", precio: 110000, talle: "L", disponible: true, destacado: true },
-    { id: 8, nombre: "Remera Nike Vintage", categoria: "remeras", precio: 85000, talle: "S", disponible: true }
+    { id: 1, nombre: "Remera Jordan Mural", categoria: "remeras", precio: 120000, talle: "M", disponible: false, imagen: "../assets/img/Productos/jordan-mural.jpg" },
+    { id: 2, nombre: "Remera Jordan 85", categoria: "remeras", precio: 120000, talle: "L", disponible: false, imagen: "../assets/img/Productos/jordan-85.jpg" },
+    { id: 3, nombre: "Buzo Nike F.R.O.G", categoria: "buzos", precio: 130000, talle: "XL (oversize)", disponible: false, imagen: "../assets/img/Productos/frog.jpg" },
+    { id: 4, nombre: "Remera Jordan Sport", categoria: "remeras", precio: 115000, talle: "L", disponible: false, imagen: "../assets/img/Productos/jordan-sport.jpg" },
+    { id: 5, nombre: "Pantalón Cargo Nike Tech", categoria: "pantalones", precio: 95000, talle: "M", disponible: true, destacado: true, imagen: "../assets/img/Productos/nike-cargo.jpg" },
+    { id: 6, nombre: "Gorra Jordan Jumpman", categoria: "accesorios", precio: 45000, talle: "Único", disponible: true, destacado: true, imagen: "../assets/img/Productos/gorra.jpg" },
+    { id: 7, nombre: "Buzo Adidas Originals", categoria: "buzos", precio: 110000, talle: "L", disponible: true, destacado: true, imagen: "../assets/img/Productos/adidas.jpg" },
+    { id: 8, nombre: "Remera Nike Vintage", categoria: "remeras", precio: 85000, talle: "S", disponible: true, imagen: "../assets/img/Productos/nike-vintage.jpg" }
 ];
 
 const claveCarrito = "ases_carrito";
@@ -61,7 +61,8 @@ function agregarAlCarrito(id) {
             nombre: producto.nombre,
             precio: producto.precio,
             talle: producto.talle,
-            cantidad: 1
+            cantidad: 1,
+            imagen: producto.imagen
         });
     }
 
@@ -75,6 +76,7 @@ function crearProducto(producto) {
 
     tarjeta.innerHTML = `
         <div class="producto-img">
+            <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 100%; object-fit: cover;">
             ${producto.disponible ? "" : "<span class='badge-vendido'>Vendido</span>"}
         </div>
         <div class="producto-info">
@@ -183,7 +185,9 @@ function mostrarCarrito() {
         const fila = document.createElement("div");
         fila.className = "carrito-item";
         fila.innerHTML = `
-            <div class="carrito-item-img"></div>
+            <div class="carrito-item-img">
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            </div>
             <div class="carrito-item-info">
                 <h4>${producto.nombre}</h4>
                 <p class="carrito-item-talle">Talle: ${producto.talle}</p>

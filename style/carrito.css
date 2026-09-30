@@ -61,6 +61,14 @@
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
+    overflow: hidden; 
+}
+
+
+.carrito-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
 }
 
 .carrito-item-info h4 {
