@@ -1,47 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
+    <title>Carrito | ASES</title>
+    <link rel="shortcut icon" href="../assets/img/Ases.favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/carrito.css">
 </head>
 <body>
     <header class="header-flex">
-        
         <a href="../index.html">
             <img class="logo" src="../assets/img/Ases.logo.png" alt="logo">
         </a>
-        <div class="buscador-container">
-            <input class="busqueda" type="search" placeholder="Buscador...">
-        </div>
-        <nav class="nav-flex">
-            <div class="div-link-enc">
-                <a class="hipervinc" href="./masvendidos.html">Mas vendidos</a>
-                <a class="hipervinc" href="./catalogo.html">Catálogo</a>                
-                <a class="hipervinc" href="./contacto.html">¡Contactanos!</a>
-            </div>
-        </nav>
-        <nav class="nav-flex">
-            <div class="div-boton-enc">
-                <a href="./cuenta.html">
-                    <img id="cuenta" class="carrito" src="../assets/img/cuenta.png" alt="">
-                </a>
 
-                <a href="./carrito.html">
-                    <img id="carrito" class="carrito" src="../assets/img/carrito.png" alt="">
-                </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-mobile">
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+        </button>
+
+        <div class="menu-mobile" id="menu-mobile">
+            <div class="buscador-container">
+                <input class="busqueda" type="search" placeholder="Buscar producto...">
             </div>
-        </nav>
+            <nav class="nav-flex">
+                <div class="div-link-enc">
+                    <a class="hipervinc" href="./masvendidos.html">Más vendidos</a>
+                    <a class="hipervinc" href="./catalogo.html">Catálogo</a>
+                    <a class="hipervinc" href="./contacto.html">¡Contactanos!</a>
+                </div>
+            </nav>
+            <nav class="nav-flex">
+                <div class="div-boton-enc">
+                    <a href="./cuenta.html">
+                        <img id="cuenta" class="carrito" src="../assets/img/cuenta.png" alt="Mi cuenta">
+                    </a>
+                    <a href="./carrito.html" class="carrito-link">
+                        <img id="carrito" class="carrito" src="../assets/img/carrito.png" alt="Carrito">
+                        <span class="carrito-contador">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main>
+        <section class="carrito-seccion">
+            <h1>Tu carrito</h1>
 
+            <p id="carrito-vacio">
+                Tu carrito está vacío. <a href="./catalogo.html">Ver catálogo</a>
+            </p>
+
+            <div class="carrito-contenido">
+                <div id="carrito-lista" class="carrito-lista">
+
+                </div>
+
+                <aside id="carrito-resumen" class="carrito-resumen">
+                    <h2>Resumen</h2>
+                    <p class="carrito-resumen-linea">
+                        Productos: <span id="carrito-cantidad-items">0</span>
+                    </p>
+                    <p class="carrito-resumen-total">
+                        Total: <span id="carrito-total">$0</span>
+                    </p>
+                    <button id="btn-finalizar" class="btn-finalizar">Finalizar compra</button>
+                    <button id="btn-vaciar" class="btn-vaciar">Vaciar carrito</button>
+                </aside>
+            </div>
+        </section>
     </main>
 
     <footer>
-        
+        <div class="final">
+            <p>ASES © 2026</p>
+        </div>
     </footer>
+
+    <script src="../app.js"></script>
 </body>
 </html>

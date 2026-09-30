@@ -1,12 +1,10 @@
-/*HEADER*/
-
 .header-flex {
     background-color: rgb(131, 2, 2);
     padding: 15px 30px;
     display: flex;
-    justify-content: space-between; 
-    align-items: center;            
-    
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -15,9 +13,7 @@
     display: block;
 }
 
-/*BUSCADOR*/
-
-.buscador-container {                   
+.buscador-container {
     display: flex;
     justify-content: left;
     width: 30%;
@@ -27,17 +23,24 @@
     padding: 6px 12px;
     border-radius: 4px;
     border: none;
-    width: 100%;   
+    width: 100%;
     max-width: 600px;
 }
 
-/*NAV DE LINKS Y BOTONES*/
+.menu-mobile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: space-between;
+}
+
 .nav-flex {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-/*LINKS*/
+
 .div-link-enc{
     flex: 1;
     justify-content: center;
@@ -57,7 +60,7 @@
     color: var(--color-fondo);
     text-decoration: none;
 }
-/*BOTONES*/
+
 .btn-enc {
     background-color: white;
     color: black;
@@ -73,42 +76,79 @@
     display: block;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 20;
+}
 
-/*Celular*/
-@media(max-width: 479px){
-    .header-flex {
-        flex-direction: column;  
+.menu-toggle-barra {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.activo .menu-toggle-barra:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.menu-toggle.activo .menu-toggle-barra:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.activo .menu-toggle-barra:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-mobile {
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
         gap: 15px;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        margin-top: 0;
+        transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    }
+
+    .menu-mobile.menu-abierto {
+        max-height: 600px;
+        opacity: 1;
+        margin-top: 15px;
     }
 
     .buscador-container {
-        width: 100%;             
+        width: 100%;
         max-width: 100%;
     }
 
     .nav-flex {
-        flex-wrap: wrap;         
+        flex-wrap: wrap;
         justify-content: center;
-    }
-}
-/*Tablet*/
-@media(min-width: 480px) and (max-width: 1024px){
-    .header-flex {
-        flex-direction:column;  
-        gap: 15px;
+        width: 100%;
     }
 
-    .buscador-container {
-        width: 100%;             
-        max-width: 100%;
-    }
-
-    .nav-flex {
-        flex-wrap: wrap;         
-        justify-content: center;
+    .div-link-enc {
+        flex-wrap: wrap;
     }
 }
-/*Computadora*/
+
 @media(min-width: 1025px){
     body{
         background-color: white;

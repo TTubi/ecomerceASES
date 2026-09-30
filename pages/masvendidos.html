@@ -1,48 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>masvendidos</title>
+    <title>Más Vendidos | ASES</title>
+    <link rel="shortcut icon" href="../assets/img/Ases.favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/catalogo.css">
 </head>
 <body>
-<body>
     <header class="header-flex">
-        
         <a href="../index.html">
             <img class="logo" src="../assets/img/Ases.logo.png" alt="logo">
         </a>
-        <div class="buscador-container">
-            <input class="busqueda" type="search" placeholder="Buscar por libro, autor...">
-        </div>
-        <nav class="nav-flex">
-            <div class="div-link-enc">
-                <a class="hipervinc" href="./masvendidos.html">Mas vendidos</a>
-                <a class="hipervinc" href="./catalogo.html">Catálogo</a>                
-                <a class="hipervinc" href="./contacto.html">¡Contactanos!</a>
-            </div>
-        </nav>
-        <nav class="nav-flex">
-            <div class="div-boton-enc">
-                <a href="./cuenta.html">
-                    <img id="cuenta" class="carrito" src="../assets/img/cuenta.png" alt="">
-                </a>
 
-                <a href="./carrito.html">
-                    <img id="carrito" class="carrito" src="../assets/img/carrito.png" alt="">
-                </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-mobile">
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+        </button>
+
+        <div class="menu-mobile" id="menu-mobile">
+            <div class="buscador-container">
+                <input class="busqueda" type="search" placeholder="Buscar producto...">
             </div>
-        </nav>
+            <nav class="nav-flex">
+                <div class="div-link-enc">
+                    <a class="hipervinc" href="./masvendidos.html">Más vendidos</a>
+                    <a class="hipervinc" href="./catalogo.html">Catálogo</a>
+                    <a class="hipervinc" href="./contacto.html">¡Contactanos!</a>
+                </div>
+            </nav>
+            <nav class="nav-flex">
+                <div class="div-boton-enc">
+                    <a href="./cuenta.html">
+                        <img id="cuenta" class="carrito" src="../assets/img/cuenta.png" alt="Mi cuenta">
+                    </a>
+                    <a href="./carrito.html" class="carrito-link">
+                        <img id="carrito" class="carrito" src="../assets/img/carrito.png" alt="Carrito">
+                        <span class="carrito-contador">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main>
+        <section class="catalogo-hero">
+            <h1>Más Vendidos</h1>
+            <p>Las prendas favoritas de nuestra comunidad.</p>
+        </section>
 
+        <section class="catalogo-grid" id="masvendidos-grid">
+
+        </section>
     </main>
 
     <footer>
-        <div >
+        <div>
             <div class="pre-final">
                 <p class="pre-final-texto">Suscribite a nuestro canal de noticias</p>
                 <input type="email" placeholder="Ingresa tu correo Electronico">
@@ -50,10 +66,10 @@
             </div>
         </div>
         <div class="final">
-            <p>Espacio</p>
-
+            <p>ASES © 2026</p>
         </div>
     </footer>
-</body>
+
+    <script src="../app.js"></script>
 </body>
 </html>

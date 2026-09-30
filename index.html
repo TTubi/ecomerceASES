@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petite Ross</title>
+    <title>ASES</title>
     <link rel="shortcut icon" href="./assets/img/Ases.favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./style/header.css">
@@ -14,57 +14,65 @@
         <a href="index.html">
             <img class="logo" src="./assets/img/Ases.logo.png" alt="logo">
         </a>
-        <div class="buscador-container">
-            <input class="busqueda" type="search" placeholder="Buscador...">
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-mobile">
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+        </button>
+
+        <div class="menu-mobile" id="menu-mobile">
+            <div class="buscador-container">
+                <input class="busqueda" type="search" placeholder="Buscador...">
+            </div>
+            <nav class="nav-flex">
+                <div class="div-link-enc">
+                    <a class="hipervinc" href="./pages/masvendidos.html">Mas vendidos</a>
+                    <a class="hipervinc" href="./pages/catalogo.html">Catálogo</a>
+                    <a class="hipervinc" href="./pages/contacto.html">¡Contactanos!</a>
+                </div>
+            </nav>
+            <nav class="nav-flex">
+                <div class="div-boton-enc">
+                    <a href="./pages/cuenta.html">
+                        <img id="cuenta" class="carrito" src="./assets/img/cuenta.png" alt="Mi cuenta">
+                    </a>
+                    <a href="./pages/carrito.html" class="carrito-link">
+                        <img id="carrito" class="carrito" src="./assets/img/carrito.png" alt="Carrito">
+                        <span class="carrito-contador">0</span>
+                    </a>
+                </div>
+            </nav>
         </div>
-        <nav class="nav-flex">
-            <div class="div-link-enc">
-                <a class="hipervinc" href="./pages/masvendidos.html">Mas vendidos</a>
-                <a class="hipervinc" href="./pages/catalogo.html">Catálogo</a>                
-                <a class="hipervinc" href="./pages/contacto.html">¡Contactanos!</a>
-            </div>
-        </nav>
-        <nav class="nav-flex">
-            <div class="div-boton-enc">
-
-                <a href="./pages/carrito.html">
-                    <img id="cuenta" class="carrito" src="./assets/img/cuenta.png" alt="">
-                </a>
-
-                <a href="./pages/carrito.html">
-                    <img id="carrito" class="carrito" src="./assets/img/carrito.png" alt="">
-                </a>
-            </div>
-        </nav>
     </header>
 
     <main>
 
         <section class="inicio">
-            
+
             <div class="inicio-texto">
                 <h1>Vestite a tu manera</h1>
 
-                <p>Descubri nuestra coleccion y encontra prendas que representen tu estilo</p>
+                <p>Descubrí nuestra colección y encontrá prendas que representen tu estilo</p>
 
                 <a href="./pages/catalogo.html">Ver coleccion</a>
 
             </div>
 
             <div class="inicio-coleccion">
-                <img src="" alt="">
+                <img src="./assets/img/carrusell/img_1.jpg" alt="">
             </div>
         </section>
-        
+
         <section class="acercaDe">
             <div class="acercaDe-img">
-                <img src="" alt="">
+                <img src="./assets/img/carrusell/img_2.jpg" alt="">
             </div>
 
             <div class="acercaDe-texto">
-                <h3>Mas que ropa, tu estilo.</h3>
-            
-                <p>En ASES buscamos ofrecer prendas que combinen comodidad personalidad y estilo. <br> Una seleccion pensada para quienes buscan prendas unicas. </p>
+                <h3>Más que ropa, tu estilo.</h3>
+
+                <p>En ASES buscamos ofrecer prendas que combinen comodidad, personalidad y estilo. <br> Una seleccion pensada para quienes buscan prendas unicas. </p>
             </div>
         </section>
 
@@ -108,10 +116,12 @@
             </div>
         </div>
         <div class="final">
-            <p>Espacio</p>
+            <p>ASES © 2026</p>
 
         </div>
     </footer>
+
+    <script src="./app.js"></script>
 </body>
 
 </html>

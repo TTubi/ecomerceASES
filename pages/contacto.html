@@ -1,40 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contacto</title>
+    <title>Contacto | ASES</title>
+    <link rel="shortcut icon" href="../assets/img/Ases.favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/contacto.css">
 </head>
 <body>
-<body>
     <header class="header-flex">
-        
         <a href="../index.html">
             <img class="logo" src="../assets/img/Ases.logo.png" alt="logo">
         </a>
-        <div class="buscador-container">
-            <input class="busqueda" type="search" placeholder="Buscador...">
-        </div>
-        <nav class="nav-flex">
-            <div class="div-link-enc">
-                <a class="hipervinc" href="./masvendidos.html">Mas vendidos</a>
-                <a class="hipervinc" href="./catalogo.html">Catálogo</a>                
-                <a class="hipervinc" href="./contacto.html">¡Contactanos!</a>
-            </div>
-        </nav>
-        <nav class="nav-flex">
-            <div class="div-boton-enc">
-                <a href="./cuenta.html">
-                    <img id="cuenta" class="carrito" src="../assets/img/cuenta.png" alt="">
-                </a>
 
-                <a href="./carrito.html">
-                    <img id="carrito" class="carrito" src="../assets/img/carrito.png" alt="">
-                </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-mobile">
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+        </button>
+
+        <div class="menu-mobile" id="menu-mobile">
+            <div class="buscador-container">
+                <input class="busqueda" type="search" placeholder="Buscar producto...">
             </div>
-        </nav>
+            <nav class="nav-flex">
+                <div class="div-link-enc">
+                    <a class="hipervinc" href="./masvendidos.html">Más vendidos</a>
+                    <a class="hipervinc" href="./catalogo.html">Catálogo</a>
+                    <a class="hipervinc" href="./contacto.html">¡Contactanos!</a>
+                </div>
+            </nav>
+            <nav class="nav-flex">
+                <div class="div-boton-enc">
+                    <a href="./cuenta.html">
+                        <img id="cuenta" class="carrito" src="../assets/img/cuenta.png" alt="Mi cuenta">
+                    </a>
+                    <a href="./carrito.html" class="carrito-link">
+                        <img id="carrito" class="carrito" src="../assets/img/carrito.png" alt="Carrito">
+                        <span class="carrito-contador">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
     </header>
+
+    <main>
+        <section class="contacto-hero">
+            <h1>¡Contactanos!</h1>
+            <p>Consultas, cambios o pedidos especiales: completá el formulario y te respondemos a la brevedad.</p>
+        </section>
+
+        <section class="contacto-form-section">
+
+            <form id="form-contacto" class="contacto-form" novalidate>
+
+                <div class="campo">
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Juana Pérez" required>
+                    <span class="campo-error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+                    <span class="campo-error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 341 1234567" required>
+                    <span class="campo-error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="fecha">Fecha preferida de contacto</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                    <span class="campo-error"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="motivo">Motivo de tu consulta</label>
+                    <select id="motivo" name="motivo" required>
+                        <option value="" disabled selected>Seleccioná una opción</option>
+                        <option value="consulta-general">Consulta general</option>
+                        <option value="estado-pedido">Estado de un pedido</option>
+                        <option value="cambio-devolucion">Cambio / Devolución</option>
+                        <option value="sugerencia">Sugerencia</option>
+                    </select>
+                    <span class="campo-error"></span>
+                </div>
+
+                <fieldset class="campo campo-grupo">
+                    <legend>Talles de interés</legend>
+                    <div class="opciones-grupo">
+                        <label class="opcion"><input type="checkbox" name="talles" value="S"> S</label>
+                        <label class="opcion"><input type="checkbox" name="talles" value="M"> M</label>
+                        <label class="opcion"><input type="checkbox" name="talles" value="L"> L</label>
+                        <label class="opcion"><input type="checkbox" name="talles" value="XL"> XL</label>
+                    </div>
+                    <span class="campo-error"></span>
+                </fieldset>
+
+                <fieldset class="campo campo-grupo">
+                    <legend>¿Cómo preferís que te contactemos?</legend>
+                    <div class="opciones-grupo">
+                        <label class="opcion"><input type="radio" name="metodo-contacto" value="whatsapp" required> WhatsApp</label>
+                        <label class="opcion"><input type="radio" name="metodo-contacto" value="email"> Email</label>
+                        <label class="opcion"><input type="radio" name="metodo-contacto" value="llamada"> Llamada</label>
+                    </div>
+                    <span class="campo-error"></span>
+                </fieldset>
+
+                <div class="campo campo-ancho">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos qué necesitás..." required></textarea>
+                    <span class="campo-error"></span>
+                </div>
+
+                <div class="campo campo-ancho campo-checkbox-simple">
+                    <label class="opcion">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        Acepto que ASES me contacte por este medio.
+                    </label>
+                    <span class="campo-error"></span>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar consulta</button>
+            </form>
+
+            <p id="contacto-confirmacion" class="contacto-confirmacion" hidden>
+                ¡Gracias! Recibimos tu consulta y te vamos a contactar pronto.
+            </p>
+        </section>
+
+        <section class="consultas-section">
+            <h2>Tus consultas enviadas</h2>
+            <p id="consultas-vacio" class="consultas-vacio">Todavía no enviaste ninguna consulta.</p>
+            <div id="consultas-lista" class="consultas-lista">
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="final">
+            <p>ASES © 2026</p>
+        </div>
+    </footer>
+
+    <script src="../app.js"></script>
 </body>
 </html>

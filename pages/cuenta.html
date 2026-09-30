@@ -3,38 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuenta</title>
+    <title>Mi Cuenta | ASES</title>
+    <link rel="shortcut icon" href="../assets/img/Ases.favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/cuenta.css">
 </head>
 <body>
-<body>
     <header class="header-flex">
-        
         <a href="../index.html">
             <img class="logo" src="../assets/img/Ases.logo.png" alt="logo">
         </a>
-        <div class="buscador-container">
-            <input class="busqueda" type="search" placeholder="Buscador...">
-        </div>
-        <nav class="nav-flex">
-            <div class="div-link-enc">
-                <a class="hipervinc" href="./masvendidos.html">Mas vendidos</a>
-                <a class="hipervinc" href="./catalogo.html">Catálogo</a>                
-                <a class="hipervinc" href="./contacto.html">¡Contactanos!</a>
-            </div>
-        </nav>
-        <nav class="nav-flex">
-            <div class="div-boton-enc">
-                <a href="./cuenta.html">
-                    <img id="cuenta" class="carrito" src="../assets/img/cuenta.png" alt="">
-                </a>
 
-                <a href="./carrito.html">
-                    <img id="carrito" class="carrito" src="../assets/img/carrito.png" alt="">
-                </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-mobile">
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+            <span class="menu-toggle-barra"></span>
+        </button>
+
+        <div class="menu-mobile" id="menu-mobile">
+            <div class="buscador-container">
+                <input class="busqueda" type="search" placeholder="Buscar producto...">
             </div>
-        </nav>
+            <nav class="nav-flex">
+                <div class="div-link-enc">
+                    <a class="hipervinc" href="./masvendidos.html">Más vendidos</a>
+                    <a class="hipervinc" href="./catalogo.html">Catálogo</a>
+                    <a class="hipervinc" href="./contacto.html">¡Contactanos!</a>
+                </div>
+            </nav>
+            <nav class="nav-flex">
+                <div class="div-boton-enc">
+                    <a href="./cuenta.html">
+                        <img id="cuenta" class="carrito" src="../assets/img/cuenta.png" alt="Mi cuenta">
+                    </a>
+                    <a href="./carrito.html" class="carrito-link">
+                        <img id="carrito" class="carrito" src="../assets/img/carrito.png" alt="Carrito">
+                        <span class="carrito-contador">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
     </header>
+
+    <main>
+        <section class="cuenta-hero">
+            <h1>Mi Cuenta</h1>
+            <p>Iniciá sesión o creá una cuenta para seguir tus pedidos.</p>
+        </section>
+
+        <section class="cuenta-tabs">
+            <div class="cuenta-caja">
+                <div class="cuenta-tab-botones">
+                    <button class="tab-btn tab-activo" data-tab="login">Iniciar sesión</button>
+                    <button class="tab-btn" data-tab="registro">Crear cuenta</button>
+                </div>
+
+                <form id="form-login" class="cuenta-form" data-tab-panel="login">
+                    <div class="campo">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" placeholder="tuemail@ejemplo.com">
+                    </div>
+                    <div class="campo">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" name="password" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn-enviar">Ingresar</button>
+                </form>
+
+                <form id="form-registro" class="cuenta-form" data-tab-panel="registro" hidden>
+                    <div class="campo">
+                        <label for="registro-nombre">Nombre</label>
+                        <input type="text" id="registro-nombre" name="nombre" placeholder="Tu nombre">
+                    </div>
+                    <div class="campo">
+                        <label for="registro-email">Email</label>
+                        <input type="email" id="registro-email" name="email" placeholder="tuemail@ejemplo.com">
+                    </div>
+                    <div class="campo">
+                        <label for="registro-password">Contraseña</label>
+                        <input type="password" id="registro-password" name="password" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn-enviar">Crear cuenta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="final">
+            <p>ASES © 2026</p>
+        </div>
+    </footer>
+
+    <script src="../app.js"></script>
 </body>
 </html>
